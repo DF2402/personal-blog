@@ -1,15 +1,15 @@
 import { error } from "console";
 import { getDb } from "./db";
 
-export async function addVisitRecord(ipAddress: string) {
+export async function addDownloadRecord(ipAddress: string) {
   try {
     const db = getDb();
-    const exist = await db("ip")
+    const exist = await db("download")
       .where({ ip: ipAddress })
       .whereRaw("DATE(created_at) = CURRENT_DATE")
       .first();
     if (!exist) {
-      await db("ip").insert({
+      await db("download").insert({
         ip: ipAddress,
       });
     }

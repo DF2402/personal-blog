@@ -1,4 +1,3 @@
-import "server-only";
 import knex from "knex";
 
 async function createDatebase() {

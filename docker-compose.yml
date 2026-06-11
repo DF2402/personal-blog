@@ -13,13 +13,9 @@ services:
       - ./pgdata:/var/lib/postgresql/data
   app:
     build: .
-    volumes:
-      - .:/app
-      - /app/node_modules
     ports:
-      - "3000:3000"
+      - "3500:3000"
     environment:
       DATABASE_URL: postgresql://admin:admin@db:5432/db
     depends_on:
       - db
-    command: npm run dev

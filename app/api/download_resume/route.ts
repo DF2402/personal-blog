@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { readFile } from "fs/promises";
 import path from "path";
-
+import { trackDownload } from "../../actions";
 export async function GET(request: Request) {
   if (!process.env.RESUMESOURCE) {
     return NextResponse.json({ error: "No RESUMESOURCE" }, { status: 500 });
@@ -15,6 +15,7 @@ export async function GET(request: Request) {
     headers.set("Content-Type", "application/pdf");
     headers.set("Content-Disposition", `inline; filename="Resume_Danny"`);
 
+    await trackDownload();
     return new NextResponse(fileBuffer, {
       status: 200,
       headers: headers,
