@@ -24,10 +24,10 @@ export default function IconGrid() {
   ];
 
   return (
-    <div className="flex flex-col items-center gap-8 p-10">
+    <div className="flex min-w-0 flex-col items-center gap-8 py-10">
       <div className="grid w-full max-w-4xl grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
         {tools.map((tool, index) => (
-          <Card shadow="concave" key={index}>
+          <Card shadow="concave" key={index} className="w-full">
             <tool.icon size={32} className="text-slate-800" />
             <span className="font-jetbrains-mono text-lg font-bold">{tool.name}</span>
           </Card>
