@@ -5,7 +5,7 @@ import Link from "next/link";
 import React from "react";
 interface AboutProp {
   email: string;
-  onNavigate: (tab: "main" | "about" | "tech stack") => void;
+  onNavigate: (tab: "main" | "about" | "techStack") => void;
 }
 
 export default function about({ email, onNavigate }: AboutProp) {

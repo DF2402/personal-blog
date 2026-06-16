@@ -28,6 +28,11 @@ export const metadata: Metadata = {
   description: "personal blog",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export default async function RootLayout({
   children,
 }: Readonly<{

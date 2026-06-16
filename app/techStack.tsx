@@ -10,7 +10,7 @@ type LangStats = {
 
 interface TechStackProps {
   langStats: LangStats;
-  onNavigate: (tab: "main" | "about" | "tech stack") => void;
+  onNavigate: (tab: "main" | "about" | "techStack") => void;
 }
 type TechStackEntry = [string, string[]];
 export default function TechStack({ langStats, onNavigate }: TechStackProps) {
@@ -33,7 +33,11 @@ export default function TechStack({ langStats, onNavigate }: TechStackProps) {
     <div className="flex min-h-screen flex-col bg-(--color-bg) p-10">
       <div className="grow gap-6 p-6">
         <CardList list={parsedTechStackList} />
-        <PieChart data={chartData} />
+      </div>
+      <div className="grow gap-6 p-6">
+        <Card shadow="concave" className="">
+          <PieChart data={chartData} />
+        </Card>
       </div>
 
       <div className="flex flex-row gap-6 p-6">

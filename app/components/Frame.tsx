@@ -38,10 +38,10 @@ export default function Frame({ textList }: FrameProps) {
     <>
       <Card shadow="concave" className="h-full w-full text-5xl font-bold">
         <Card shadow="convex" className="font-geist-mono h-full w-full text-5xl font-bold">
-          <span className="inline-block"> {displayText}</span>
+          <span className="truncate text-sm md:text-2xl lg:text-4xl"> {displayText}</span>
           <span
             className={`${phase === "idle" || phase === "deleting" ? "animate-blink" : ""}
-              inline-block`}
+              inline-block truncate text-sm md:text-2xl lg:text-4xl`}
           >
             _
           </span>

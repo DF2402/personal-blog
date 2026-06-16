@@ -3,7 +3,7 @@ import Card from "./components/Card";
 import Frame from "./components/Frame";
 import React from "react";
 interface MainProps {
-  onNavigate: (tab: "main" | "about" | "tech stack") => void;
+  onNavigate: (tab: "main" | "about" | "techStack") => void;
 }
 export default function Main({ onNavigate }: MainProps): React.JSX.Element {
   return (
@@ -37,7 +37,7 @@ export default function Main({ onNavigate }: MainProps): React.JSX.Element {
         <Card
           shadow="concave"
           className="font-black-ops-one w-full items-center justify-center text-9xl font-bold"
-          onClick={() => onNavigate("tech stack")}
+          onClick={() => onNavigate("techStack")}
           button={true}
         >
           Tech Stack
