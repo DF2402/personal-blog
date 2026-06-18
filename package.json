@@ -11,6 +11,9 @@
     "db:rollback": "dotenv -e .env.local -- knex migrate:rollback --knexfile knexfile.ts"
   },
   "dependencies": {
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.3",
+    "jose": "^6.2.3",
     "knex": "^3.2.10",
     "lucide-react": "^1.17.0",
     "mysql2": "^3.22.5",
