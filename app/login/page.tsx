@@ -1,25 +1,10 @@
 "use client";
 
-import { useFormState, useFormStatus } from "react-dom";
+import React from "react";
 import { loginAction } from "../actions";
 
-function SubmitButton() {
-  const { pending } = useFormStatus();
-
-  return (
-    <button
-      type="submit"
-      disabled={pending}
-      className={`mt-6 w-full rounded-md px-4 py-2 font-medium text-white transition-colors
-        ${pending ? "cursor-not-allowed bg-gray-400" : "bg-slate-900 hover:bg-slate-800"}`}
-    >
-      {pending ? "登入驗證中..." : "登入系統"}
-    </button>
-  );
-}
-
 export default function LoginPage() {
-  const [state, formAction] = useFormState(loginAction, { error: "" });
+  const [state, formAction, isPending] = React.useActionState(loginAction, { error: "" });
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-50">
@@ -53,7 +38,6 @@ export default function LoginPage() {
             </div>
           </div>
 
-          {/* 錯誤訊息展示區 */}
           {state.error && (
             <div
               className="mt-4 rounded-md border border-red-200 bg-red-50 p-3 text-sm text-red-600"
@@ -62,7 +46,14 @@ export default function LoginPage() {
             </div>
           )}
 
-          <SubmitButton />
+          <button
+            type="submit"
+            disabled={isPending}
+            className={`mt-6 w-full rounded-md px-4 py-2 font-medium text-white transition-colors
+              ${isPending ? "cursor-not-allowed bg-gray-400" : "bg-slate-900 hover:bg-slate-800"}`}
+          >
+            {isPending ? "登入驗證中..." : "登入系統"}
+          </button>
         </form>
       </div>
     </div>

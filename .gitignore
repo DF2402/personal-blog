@@ -44,3 +44,5 @@ next-env.d.ts
 pgdata/
 
 *.pdf
+
+seeds/

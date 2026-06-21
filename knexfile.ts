@@ -8,6 +8,9 @@ const config: Knex.Config = {
     extension: "ts",
     tableName: "knex_migrations",
   },
+  seeds: {
+    extension: "ts",
+  },
 };
 
 export default config;
